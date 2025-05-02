@@ -12,39 +12,63 @@ model = joblib.load(model_path)
 st.set_page_config(page_title="Accident Severity Predictor", layout="centered")
 st.markdown("""
     <style>
-    body {
+    html, body, .stApp {
+        background: linear-gradient(120deg, #e0f7fa, #fce4ec);
         font-family: 'Segoe UI', sans-serif;
     }
 
     .stApp {
-        background-color: #f9f9f9;
+        padding: 20px;
     }
 
-    .stButton>button {
-        background-color: #1f77b4;
+    .stTitle {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    .stSelectbox > label {
+        font-weight: 600;
+        color: #37474f;
+    }
+
+    .stButton > button {
+        background: linear-gradient(to right, #42a5f5, #7e57c2);
         color: white;
-        font-weight: 500;
-        padding: 0.5em 1.2em;
-        border-radius: 5px;
+        font-weight: bold;
+        border-radius: 30px;
+        padding: 0.6em 2em;
         border: none;
-        transition: background-color 0.3s ease;
+        transition: 0.3s ease;
     }
 
-    .stButton>button:hover {
-        background-color: #135d8c;
+    .stButton > button:hover {
+        background: linear-gradient(to right, #7e57c2, #42a5f5);
+        transform: scale(1.05);
     }
 
     .result-box {
-        background-color: #e8f0fe;
+        background-color: #ffffffdd;
+        border-left: 6px solid #7e57c2;
         padding: 1rem;
-        border-left: 6px solid #1f77b4;
-        font-size: 1.1rem;
-        border-radius: 6px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        color: #2c3e50;
+        margin-top: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .stForm {
+        background-color: rgba(255,255,255,0.85);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
         margin-top: 1rem;
     }
     </style>
 """, unsafe_allow_html=True)
 
+  
 
 
     
