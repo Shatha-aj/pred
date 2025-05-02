@@ -125,4 +125,4 @@ if submitted:
     prediction = model.predict(input_df)
     severity = label_encoder.inverse_transform(prediction)
 
-    st.success(f"🚨 Predicted Accident Severity: {severity[0]}")
+    st.success(f"🚨 Predicted Accident Severity: {severity[0]}",unsafe_allow_html=True)
