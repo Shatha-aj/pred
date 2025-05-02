@@ -10,61 +10,46 @@ model_path = os.path.join(os.getcwd(), 'accident_model.pkl')
 model = joblib.load(model_path)
 
 st.set_page_config(page_title="Accident Severity Predictor", layout="centered")
-
 st.markdown("""
     <style>
-    .main {
-        background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
-        padding: 20px;
-        border-radius: 12px;
+    body {
+        font-family: 'Segoe UI', sans-serif;
     }
 
     .stApp {
-        background-color: #fdfdfd;
+        background-color: #f9f9f9;
     }
 
     .stButton>button {
-        background-color: #2196F3;
+        background-color: #1f77b4;
         color: white;
-        font-weight: 600;
+        font-weight: 500;
+        padding: 0.5em 1.2em;
+        border-radius: 5px;
         border: none;
-        border-radius: 8px;
-        padding: 0.6em 1.5em;
-        transition: 0.3s;
+        transition: background-color 0.3s ease;
     }
 
     .stButton>button:hover {
-        background-color: #1976D2;
-    }
-
-    .block-container {
-        padding-top: 2rem;
+        background-color: #135d8c;
     }
 
     .result-box {
-        padding: 1.2em;
-        border-radius: 10px;
-        text-align: center;
-        font-size: 1.3em;
-        font-weight: bold;
-    }
-
-    .mild {
-        background-color: #c8e6c9;
-        color: #256029;
-    }
-
-    .serious {
-        background-color: #ffe082;
-        color: #795548;
-    }
-
-    .fatal {
-        background-color: #ef9a9a;
-        color: #b71c1c;
+        background-color: #e8f0fe;
+        padding: 1rem;
+        border-left: 6px solid #1f77b4;
+        font-size: 1.1rem;
+        border-radius: 6px;
+        margin-top: 1rem;
     }
     </style>
 """, unsafe_allow_html=True)
+
+
+
+    
+
+  
 
 
 st.title("🚦 Accident Severity Prediction")
