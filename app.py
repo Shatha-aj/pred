@@ -31,6 +31,13 @@ st.markdown("""
         font-weight: 600;
         color: #37474f;
     }
+    /* Style for selectbox labels */
+label {
+    color: #1a237e !important;
+    font-weight: bold !important;
+    font-size: 1rem !important;
+}
+
 
     .stButton > button {
         background: linear-gradient(to right, #42a5f5, #7e57c2);
@@ -83,9 +90,9 @@ st.markdown("Use this app to predict the likely severity of a road accident base
 with st.form("input_form"):
     col1, col2 = st.columns(2)
     with col1:
-        time = st.selectbox("Time of Day", ["Morning", "Afternoon", "Evening", "Night"])
-        sex = st.selectbox("Sex of Driver", ["Male", "Female"])
-        age_band = st.selectbox("Age Band of Driver", ["18-30", "31-50", "Over 51", "Under 18"])
+       time = st.selectbox("⏰ Time of Day", ["Morning", "Afternoon", "Evening", "Night"])
+       sex = st.selectbox("🚻 Sex of Driver", ["Male", "Female"])
+       age_band = st.selectbox("👤 Age Band of Driver", ["18-30", "31-50", "Over 51", "Under 18"])
         experience = st.selectbox("Driving Experience", ["1-2yr", "2-5yr", "5-10yr", "Above 10yr", "below 1yr"])
     with col2:
         day = st.selectbox("Day of Week", ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
