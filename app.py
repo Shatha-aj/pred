@@ -110,12 +110,9 @@ if submitted:
         "Age_band_of_driver": [age_band],
         "Sex_of_driver": [sex],
         "Driving_experience": [experience],
-        "Type_of_vehicle": [vehicle],
-        "Area_accident_occured": [area],
         "Road_surface_conditions": [road],
         "Light_conditions": [light],
-        "Weather_conditions": [weather],
-        "Cause_of_accident": [cause],
+        "Weather_conditions": [weather]
     }
 
     input_df = pd.DataFrame(input_dict)
