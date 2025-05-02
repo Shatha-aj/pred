@@ -91,7 +91,6 @@ st.markdown("Use this app to predict the likely severity of a road accident base
 with st.form("input_form"):
     col1, col2 = st.columns(2)
     with col1:
-       time = st.selectbox("⏰ Time of Day", ["Morning", "Afternoon", "Evening", "Night"])
        sex = st.selectbox("🚻 Sex of Driver", ["Male", "Female"])
        age_band = st.selectbox("👤 Age Band of Driver", ["18-30", "31-50", "Over 51", "Under 18"])
        experience = st.selectbox("Driving Experience", ["1-2yr", "2-5yr", "5-10yr", "Above 10yr", "below 1yr"])
@@ -106,7 +105,6 @@ with st.form("input_form"):
 if submitted:
     # Prepare input DataFrame
     input_dict = {
-        "Time": [time],
         "Day_of_week": [day],
         "Age_band_of_driver": [age_band],
         "Sex_of_driver": [sex],
