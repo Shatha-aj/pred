@@ -14,20 +14,58 @@ st.set_page_config(page_title="Accident Severity Predictor", layout="centered")
 st.markdown("""
     <style>
     .main {
-        background-color: #f0f2f6;
+        background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
         padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        border-radius: 12px;
     }
+
+    .stApp {
+        background-color: #fdfdfd;
+    }
+
     .stButton>button {
-        background-color: #4CAF50;
+        background-color: #2196F3;
         color: white;
-        font-weight: bold;
-        padding: 0.5em 2em;
+        font-weight: 600;
+        border: none;
         border-radius: 8px;
+        padding: 0.6em 1.5em;
+        transition: 0.3s;
+    }
+
+    .stButton>button:hover {
+        background-color: #1976D2;
+    }
+
+    .block-container {
+        padding-top: 2rem;
+    }
+
+    .result-box {
+        padding: 1.2em;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+
+    .mild {
+        background-color: #c8e6c9;
+        color: #256029;
+    }
+
+    .serious {
+        background-color: #ffe082;
+        color: #795548;
+    }
+
+    .fatal {
+        background-color: #ef9a9a;
+        color: #b71c1c;
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 st.title("🚦 Accident Severity Prediction")
 st.markdown("Use this app to predict the likely severity of a road accident based on driving and environmental conditions.")
@@ -39,15 +77,12 @@ with st.form("input_form"):
         time = st.selectbox("Time of Day", ["Morning", "Afternoon", "Evening", "Night"])
         sex = st.selectbox("Sex of Driver", ["Male", "Female"])
         age_band = st.selectbox("Age Band of Driver", ["18-30", "31-50", "Over 51", "Under 18"])
-        experience = st.selectbox("Driving Experience", ["1-2yr", "2-5yr", "5-10yr", "Above 10yr", "No Experience"])
-        area = st.selectbox("Area Accident Occurred", ["Urban", "Rural"])
+        experience = st.selectbox("Driving Experience", ["1-2yr", "2-5yr", "5-10yr", "Above 10yr", "below 1yr"])
     with col2:
-        day = st.selectbox("Day of Week", ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
-        vehicle = st.selectbox("Type of Vehicle", ["Automobile", "Lorry", "Bus", "Taxi", "Other"])
+        day = st.selectbox("Day of Week", ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
         road = st.selectbox("Road Surface Conditions", ["Dry", "Wet", "Snow", "Flood"])
-        light = st.selectbox("Light Conditions", ["Daylight", "Night", "Twilight"])
-        weather = st.selectbox("Weather Conditions", ["Clear", "Rainy", "Foggy", "Windy"])
-        cause = st.selectbox("Cause of Accident", ["Over Speeding", "Driving under the influence", "No seat belt", "Mechanical failure", "Unknown"])
+        light = st.selectbox("Light Conditions", ["No lighting", "Day lighting", "lights unlit","lights lit"])
+        weather = st.selectbox("Weather Conditions", ["Normal", "Raining", "cloudy"])
 
     submitted = st.form_submit_button("Predict Severity")
 
