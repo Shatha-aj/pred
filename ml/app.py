@@ -4,9 +4,13 @@ import joblib
 
 # Load model and helpers
 import os
+import joblib
 
-model_path = os.path.join(os.getcwd(), 'accident_model.pkl')
-model = joblib.load(model_path)
+base_path = os.path.dirname(__file__)
+model = joblib.load(os.path.join(base_path, "accident_model.pkl"))
+label_encoder = joblib.load(os.path.join(base_path, "label_encoder.pkl"))
+columns = joblib.load(os.path.join(base_path, "columns.pkl"))
+
 st.set_page_config(page_title="Accident Severity Predictor", layout="centered")
 
 st.markdown("""
