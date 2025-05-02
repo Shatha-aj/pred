@@ -3,10 +3,10 @@ import pandas as pd
 import joblib
 
 # Load model and helpers
-model = joblib.load("accident_model.pkl")
-label_encoder = joblib.load("label_encoder.pkl")
-columns = joblib.load("columns.pkl")
+import os
 
+model_path = os.path.join(os.getcwd(), 'accident_model.pkl')
+model = joblib.load(model_path)
 st.set_page_config(page_title="Accident Severity Predictor", layout="centered")
 
 st.markdown("""
