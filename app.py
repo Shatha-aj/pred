@@ -96,9 +96,9 @@ with st.form("input_form"):
        experience = st.selectbox("Driving Experience", ["1-2yr", "2-5yr", "5-10yr", "Above 10yr", "below 1yr"])
     with col2:
         day = st.selectbox("Day of Week", ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
-        road = st.selectbox("Road Surface Conditions", ["Dry", "Wet", "Snow", "Flood"])
-        light = st.selectbox("Light Conditions", ["No lighting", "Day lighting", "lights unlit","lights lit"])
-        weather = st.selectbox("Weather Conditions", ["Normal", "Raining", "cloudy"])
+        road = st.selectbox("Road Surface Conditions", ["Dry", "Wet or damp", "Snow", "Flood over 3cm. deep"])
+        light = st.selectbox("Light Conditions", ["Darkness - no lighting", "Daylight", " Darkness - lights unlit","Darkness - lights lit"])
+        weather = st.selectbox("Weather Conditions", ["Normal", "Raining", "Cloudy"])
 
     submitted = st.form_submit_button("Predict Severity")
 
