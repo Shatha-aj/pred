@@ -126,6 +126,6 @@ if submitted:
     severity = label_encoder.inverse_transform(prediction)
 
     st.success(f"🚨 Predicted Accident Severity: {severity[0]}")
-    probs = model.predict_proba(input_df)
+    probs = xgb.predict_proba(input_df)
 st.write("🔍 Prediction probabilities (per class):", probs)
 
